@@ -1,0 +1,109 @@
+
+<%= form_for HouseProvider.new, local: true do |form| %>
+<table>
+<tr><td>
+<div class='inlineblock'><%= form.label :first_name%><span class='requiredField'> *</span><br/>
+<%= form.text_field :first_name, class:"txtinput" %></div>
+<div class='inlineblock'><%= form.label :last_name%><br/>
+<%= form.text_field :last_name, class:"txtinput"%></div>
+<div class='inlineblock'><%= form.label :phone_number%><span class='requiredField'> *</span><br/>
+<%= form.text_field :phone_number, class:"txtinput", type:'tel'%></div>
+
+<div class='inlineblock'><%= form.label :email%><span class='requiredField'> *</span><br/>
+<%= form.text_field :email, type:"email", class:"txtinput"%></div>
+</td>
+</tr><tr><td>
+<div class='inlineblock'> <%= form.label :address%><br/>
+<%= form.text_field :address, class:"txtinput"%></div>
+
+<div class='inlineblock'><%= form.label :city%><span class='requiredField'> *</span><br/>
+<%= form.text_field :city, class:"txtinput"%></div>
+
+<div class='inlineblock'><%= form.label :state%><span class='requiredField'> *</span><br/>
+<%= form.text_field :state, class:"txtinput"%></div>
+
+<div class='inlineblock'><%= form.label :zipcode%><br/>
+<%= form.text_field :zipcode, class: "txtinput"%></div>
+
+</td></tr><tr><td>
+
+<div class='inlineblock'><%= form.label :desired_price%><br/>
+<%= form.text_field :desired_price, class:"txtinput"%>
+</div>
+<div class='inlineblock'><%= form.label :payment_type%><br/>
+<%= form.select :price_type, 
+    raw('<option value="per month">Per Month</option>
+        <option value="per day">Per Day</option>'), 
+        {}, { :class=>"inputddm" }%>
+</div>
+<div class='inlineblock'><%= form.label :rental_url%><br/>
+<%= form.text_field :rental_url, class:"txtinputM", placeholder: "http(s)://"%></div>
+<div class='inlineblockw'><%= form.label :additional_rental_info%><br/>
+<%= form.text_field :additional_info, class:"txtinputW"%></div>
+
+</td></tr><tr><td>
+<div class='inlineblock'><%= form.label :type_of_houseing%><br/>
+<%= form.select :type_of_housing, 
+    raw('<option value="Single Family Home">Single Family Home</option>                  
+                    <option value="Apartment(s)">Apartment(s)</option>                  
+                    <option value="Condo">Condo</option>                  
+                    <option value="Mobile Home">Mobile Home</option>                
+                    <option value="Studio">Studio</option>                  
+                    <option value="Travel Trailer">Travel Trailer</option>                  
+                    <option value="Space for Travel Trailer">Space for Travel Trailer</option>'), {}, { :class=>"inputddw" }%>
+</div>
+
+<div class='inlineblock'><%= form.label :type_of_term%><br/>
+<%= form.select :type_of_term, 
+    raw('<option value="Temporary: Less than 30 Days">Temporary: Less than 30 Days</option>
+        <option value="Short Term: Less than 6 Months">Short Term: Less than 6 Months</option> 
+        <option value="Permanent: 6 Months +">Permanent: 6 Months +</option>'), {}, { :class=>"inputddw" }%>
+</div>
+
+
+</td></tr><tr><td>
+
+<div class='inlineblock'><%= form.label :bedroom%><br/>
+<%= form.select(:bedroom, [1,2,3,4,5,6,7,8], {}, { :class=>"inputdd" })%>
+</div>
+<div class='inlineblock'><%= form.label :bathroom%><br/>
+<%= form.select( :bathroom,
+    raw('
+    <option value="0">0</option> 
+    <option value="1">1</option> 
+        <option value="1.5">1.5</option> 
+        <option value="2">2</option> 
+        <option value="2.5">2.5</option> 
+        <option value="3">3</option>                  
+        <option value="3.5">3.5</option>                  
+        <option value="4">4</option>                  
+        <option value="4.5">4.5</option>                
+        <option value="5">5</option>    
+        <option value="5.5">5.5</option>    
+        <option value="6">6</option>
+        <option value="6.5">6.5</option>
+        <option value="7+">7+</option>'), {}, { :class=>"inputdd" } )%>
+</div>
+
+<div class='inlineblock'><%= form.label :pets%><br/>
+<%= form.select :pets,
+    raw('<option value="3">Considered</option>   
+        <option value="1">Yes</option> 
+        <option value="2">No</option>
+        '), {}, { :class=>"inputdd" }%>
+</div>
+
+
+<div class='inlineblock'><%= form.label :smoke_free%><br/>
+<%= form.select :smoke_free, 
+    raw('<option value="0">Not Answered</option> 
+        <option value="1">No smoking</option> 
+        <option value="2">Smoking</option>   
+        '), {}, { :class=>"inputdd" }%>
+</div>
+</td></tr>
+
+</table>
+<div><%=form.submit "Save this Housing", class: "btn primary submit prvdr" %></div>
+
+<%end%>

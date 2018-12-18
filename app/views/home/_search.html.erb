@@ -1,0 +1,74 @@
+<%if @house_providers.blank? %>
+<%else%>
+    <a name="HouseQueryResultTag"></a>
+    <div>
+        <span style="font-size: x-large; font-weight: bold; color:#ff7b52;">Rental Query Result</span>
+        <br/>
+    </div>
+    
+      <table class = "table table-striped v2" id = "cart_table" style="width:416px;max-width:416px;">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>Pets</th>
+                <th>Smoke Free</th>
+                <th>Desired Price</th>
+                <th>Type of Rental</th>
+                <th>Bedroom</th>
+                <th>Bathroom</th>
+                <th>Type of Term</th>
+                <th>Addition Info</th>
+            </tr>
+        </thead>
+
+        <tbody >
+        <% @house_providers.each do |r| %>
+        <tr>
+            <td><%=r.address%></td>
+            <td><%=r.city%></td>
+            <td><%=r.state%></td>
+            <td><%=r.zipcode%></td>
+            <td><%= if (r.pets == 3)
+                'Considered' 
+            elsif (r.pets==1)
+                'Yes'
+            else
+                'no'
+            end %></td>
+            <td><%=if (r.smoke_free == 0)
+                'Not Answered' 
+            elsif (r.pets==1)
+                'No Smoking'
+            elsif (r.pets==2)
+                'Smoking Ok'
+            else
+                'N/A'
+            end %></td>
+            <td><%= number_to_currency r.desired_price, precision: 2%></td>
+            <td><%=r.type_of_housing%></td>
+            <td><%=r.bedroom%></td>
+            <td><%=r.bathroom%></td>
+            <td><%=r.type_of_term%></td>
+            <td style="width:20%;  word-wrap: break-word;">
+            <%=r.additional_info%><br/>
+                <% unless (r.rental_url.blank?)
+                        if (r.rental_url.start_with?("http://", "https://") ) #  "http(s)://" 
+                            linkURL = r.rental_url
+                        else
+                            linkURL = "https://" + r.rental_url
+                        end%>
+                         <a href="<%=linkURL%>" target='_blank'><%=linkURL%></a>
+                <%  end%>
+                
+            </td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+    <hr style="border:1px double gray" width="80%" color=gray SIZE=1>
+    <% session[:QueryParam] = nil %>
+<%end%>

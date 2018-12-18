@@ -1,0 +1,93 @@
+// Place all the styles related to the HouseProviders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+    text-align:center !important; 
+    margin-left:auto !important; 
+    margin-right:auto !important; 
+  }
+
+.txtinput  {
+    display:block;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #ffeacc;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    width: 180px;
+ }
+ .txtinputM{
+    display:block;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #ffeacc;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    width: 363px;
+ }
+ .txtinputW {
+    display:block;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #ffeacc;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    // width: 100% !important;
+ }
+
+ .inlineblock {
+    display: inline-block;
+ }
+.btn.primary.submit.prvdr {
+    vertical-align: middle;
+    height: 40px;
+    width: 260px;
+    padding: 15px, 0px;
+    margin: 12px;
+    line-height: 6px;
+}
+.new_house_provider{
+    margin: auto;
+}
+
+ .inputdd {
+    display:block !important;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    width:150px !important;
+
+ }
+
+ .inputddm {
+    display:block !important;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    width:180px !important;
+
+ }
+ .inputddw {
+    display:block !important;
+    border-bottom:1px solid#ccc;
+    border: 1px solid #aaaaaa;
+    border-radius: 8px;
+    font-weight: normal;
+    display: block;
+    padding: 7px 15px;
+    width: 305px !important;
+ }
+ .requiredField {
+    color: green;
+    font-weight: bold;
+ }
