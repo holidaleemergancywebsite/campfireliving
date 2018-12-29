@@ -12,6 +12,7 @@ class CreateHouseNeededs < ActiveRecord::Migration[5.2]
       t.integer :pets
       t.integer :smoke_free
       t.decimal :desired_price
+      t.string :price_type
       t.integer :type_of_housing
       t.integer :bedroom
       t.decimal :bathroom  

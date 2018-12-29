@@ -1,26 +1,27 @@
 
+<div><div id="error_house_provider"></div></div>
 <%= form_for HouseProvider.new, local: true do |form| %>
 <table>
 <tr><td>
 <div class='inlineblock'><%= form.label :first_name%><span class='requiredField'> *</span><br/>
-<%= form.text_field :first_name, class:"txtinput" %></div>
+<%= form.text_field :first_name, class:"txtinput", :required=> true %></div>
 <div class='inlineblock'><%= form.label :last_name%><br/>
 <%= form.text_field :last_name, class:"txtinput"%></div>
 <div class='inlineblock'><%= form.label :phone_number%><span class='requiredField'> *</span><br/>
-<%= form.text_field :phone_number, class:"txtinput", type:'tel'%></div>
+<%= form.text_field :phone_number, class:"txtinput", :required=> true , type:'tel'%></div>
 
 <div class='inlineblock'><%= form.label :email%><span class='requiredField'> *</span><br/>
-<%= form.text_field :email, type:"email", class:"txtinput"%></div>
+<%= form.text_field :email, type:"email", class:"txtinput", :required=> true %></div>
 </td>
 </tr><tr><td>
 <div class='inlineblock'> <%= form.label :address%><br/>
 <%= form.text_field :address, class:"txtinput"%></div>
 
 <div class='inlineblock'><%= form.label :city%><span class='requiredField'> *</span><br/>
-<%= form.text_field :city, class:"txtinput"%></div>
+<%= form.text_field :city, class:"txtinput", :required=> true %></div>
 
 <div class='inlineblock'><%= form.label :state%><span class='requiredField'> *</span><br/>
-<%= form.text_field :state, class:"txtinput"%></div>
+<%= form.text_field :state, class:"txtinput", :required=> true %></div>
 
 <div class='inlineblock'><%= form.label :zipcode%><br/>
 <%= form.text_field :zipcode, class: "txtinput"%></div>

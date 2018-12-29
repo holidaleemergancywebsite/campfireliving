@@ -3,7 +3,7 @@
 <table>
 <tr><td>
 
-<div class='inlineblock'><%= form.label :type_of_houseing%><span class='requiredField'> *</span><br/>
+<div class='inlineblock'><%= form.label :type_of_houseing%><br/>
 <%= form.select :type_of_housing, 
     raw('<option value="0">-- select --</option> 
                     <option value="Single Family Home">Single Family Home</option>                  
@@ -15,7 +15,7 @@
                     <option value="Space for Travel Trailer">Space for Travel Trailer</option>'), {}, { :class=>"inputddw" }%>
 </div>
 
-<div class='inlineblock'><%= form.label :type_of_term%><span class='requiredField'> *</span><br/>
+<div class='inlineblock'><%= form.label :type_of_term%><br/>
 <%= form.select :type_of_housing, 
     raw('<option value="0">-- select --</option>
         <option value="Temporary: Less than 30 Days">Temporary: Less than 30 Days</option>
@@ -23,7 +23,7 @@
         <option value="Permanent: 6 Months +">Permanent: 6 Months +</option>'), {}, { :class=>"inputddw" }%>
 </div>
 <tr><td>
-<div class='inlineblock'><%= form.label :bedroom%><span class='requiredField'> *</span><br/>
+<div class='inlineblock'><%= form.label :bedroom%><br/>
 <%= form.select(:bedroom, [1,2,3,4,5,6,7,8], {}, { :class=>"inputdd" })%>
 </div>
 
@@ -67,24 +67,24 @@
 </td></tr>
 <tr><td>
 <div class='inlineblock'><%= form.label :first_name%><span class='requiredField'> *</span><br/>
-<%= form.text_field :first_name, class:"txtinput" %></div>
+<%= form.text_field :first_name, class:"txtinput", :required=> true%></div>
 <div class='inlineblock'><%= form.label :last_name%><br/>
 <%= form.text_field :last_name, class:"txtinput"%></div>
 <div class='inlineblock'><%= form.label :phone_number%><span class='requiredField'> *</span><br/>
-<%= form.text_field :phone_number, class:"txtinput" %></div>
+<%= form.text_field :phone_number, class:"txtinput", :required=> true%></div>
 
 <div class='inlineblock'><%= form.label :email%><span class='requiredField'> *</span><br/>
-<%= form.text_field :email, type:"email", class:"txtinput"%></div>
+<%= form.text_field :email, type:"email", class:"txtinput", :required=> true%></div>
 </td>
 </tr><tr><td>
 <div class='inlineblock'> <%= form.label :address%><br/>
 <%= form.text_field :address, class:"txtinput"%></div>
 
 <div class='inlineblock'><%= form.label :city%><span class='requiredField'> *</span><br/>
-<%= form.text_field :city, class:"txtinput"%></div>
+<%= form.text_field :city, class:"txtinput", :required=> true%></div>
 
 <div class='inlineblock'><%= form.label :state%><span class='requiredField'> *</span><br/>
-<%= form.text_field :state, class:"txtinput"%></div>
+<%= form.text_field :state, class:"txtinput", :required=> true%></div>
 
 <div class='inlineblock'><%= form.label :zipcode%><br/>
 <%= form.text_field :zipcode, class: "txtinput"%></div>
@@ -92,7 +92,16 @@
 </td></tr><tr><td>
 
 <div class='inlineblock'><%= form.label :expected_price%><br/>
-<%= form.text_field :desired_price, class:"txtinput"%></div>
+<%= form.text_field :desired_price, class:"txtinput"%>
+</div>
+<div class='inlineblock'><%= form.label :payment_type%><br/>
+<%= form.select :price_type, 
+    raw('<option value="per month">Per Month</option>
+        <option value="per day">Per Day</option>'), 
+        {}, { :class=>"inputddm" }%>
+</div>
+
+</td></tr><tr><td>
 
 <div class='inlineblockW'><%= form.label :comment%><br/>
 <%= form.text_field :comment, class:"txtinputW"%></div>

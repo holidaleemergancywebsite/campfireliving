@@ -16,6 +16,7 @@
                 <th>Pets</th>
                 <th>Smoke Free</th>
                 <th>Desired Price</th>
+                <th>Price Type</th>
                 <th>Type of Rental</th>
                 <th>Bedroom</th>
                 <th>Bathroom</th>
@@ -48,6 +49,7 @@
                 'N/A'
             end %></td>
             <td><%= number_to_currency r.desired_price, precision: 2%></td>
+            <td><%=r.price_type%></td>
             <td><%=r.type_of_housing%></td>
             <td><%=r.bedroom%></td>
             <td><%=r.bathroom%></td>

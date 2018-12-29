@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_080744) do
     t.integer "pets"
     t.integer "smoke_free"
     t.decimal "desired_price", precision: 10
+    t.string "price_type"
     t.integer "type_of_housing"
     t.integer "bedroom"
     t.decimal "bathroom", precision: 10
